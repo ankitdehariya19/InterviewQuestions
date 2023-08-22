@@ -1,0 +1,272 @@
+/* Global reset */
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Rest of your styles... */
+
+/* Reset some default browser styles */
+body, h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+ /* Light gray background */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+height: 100%;
+
+
+  
+}
+
+header {
+	background: hsl(0,0%,90%);
+  font-size: 28px;
+  color: #000;
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+ 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Larger and more readable font sizes */
+select, .question, .answer {
+  font-size: 18px;
+
+}
+.question{
+  color: black;
+  font-weight:600;
+}
+
+/* Increase line height for better readability */
+.answer {
+  line-height: 1.8;
+  color: gray;
+}
+
+/* Adjust margins for better spacing */
+.language {
+  margin-bottom: 20px;
+  width: 10vmax;
+  height: 10vmax;
+  height: fit-content;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.question-container {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+/* Increase the font size of the "Done" button */
+.done {
+  font-size: 16px;
+  padding: 8px 16px;
+}
+
+/* Dark mode toggle style */
+.toggle {
+  width: 60px;
+  height: 30px;
+}
+
+/* Smaller font size for smaller screens */
+/* Global reset and other styles... */
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  /* Adjust font sizes */
+  body {
+    font-size: 14px;
+  }
+
+  header {
+    font-size: 17px;
+    padding: 10px 0;
+  }
+
+  .question, .answer {
+    font-size: 14px;
+  }
+
+  /* Adjust container padding */
+  .container {
+    padding: 20px;
+  }
+
+  /* Adjust Dark mode toggle size */
+  .toggle {
+    width: 50px;
+    height: 25px;
+  }
+
+  /* Adjust question and answer containers */
+  .question-container {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* Adjust select dropdown */
+  .language {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Additional responsive styles... */
+}
+
+
+
+/* Additional styles ... */
+
+.select-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.select-container label {
+  font-size: 16px;
+  margin-right: 10px;
+  color: #555;
+}
+
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 600px) {
+  .select-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .select-container label {
+    margin-bottom: 8px;
+  }
+
+  .tick-container {
+    margin-top: 10px;
+  }
+}
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	--dur: 0.3s;
+	font-size: calc(40px + (80 - 40)*(100vw - 320px)/(2560 - 320));
+}
+body, input {
+
+	color: hsl(0,0%,10%);
+	
+}
+input {
+  margin-left: 20px;
+	color: hsl(0,0%,10%);
+  
+	
+}
+
+
+form, .toggle:before, .toggle:after {
+  background-color: white;
+}
+form, .toggle {
+	position: relative;
+}
+form {
+ height: 100%;
+}
+.curtain, .sr, .toggle:before, .toggle:after {
+	position: absolute;
+}
+.curtain, .toggle:before, .toggle:after {
+	transition: transform var(--dur);
+}
+.curtain, .toggle:before, .toggle:checked:after  {
+	transition-timing-function: ease-out;
+}
+.curtain, .sr {
+	top: 0;
+	left: 0;
+}
+.curtain {
+	background: hsl(0,0%,100%);
+	mix-blend-mode: difference;
+	pointer-events: none;
+	width: 100%;
+	height: 100%;
+	transform: scaleX(0);
+	transform-origin: 0 50%;
+}
+.sr, .toggle {
+	overflow: hidden;
+}
+.sr {
+	clip: rect(1px,1px,1px,1px);
+	color: transparent;
+	width: 1px;
+	height: 1px;
+}
+.toggle {
+
+	background: currentColor;
+	border-radius: 0.75em;
+	cursor: pointer;
+	width: 3em;
+	height: 1.5em;
+	-webkit-appearance: none;
+	appearance: none;
+	-webkit-tap-highlight-color: transparent;
+}
+.toggle:before, .toggle:after {
+	border-radius: 50%;
+	content: "";
+	display: block;
+	top: 0.25em;
+	left: 0.25em;
+	width: 1em;
+	height: 1em;
+}
+.toggle:before, .toggle:checked:after {
+	transition-delay: 0s;
+}
+.toggle:checked:before, .toggle:after {
+	transition-delay: calc(var(--dur) * 0.75);
+	transition-timing-function: cubic-bezier(0.3,1.6,0.5,0.7);
+}
+.toggle:before {
+	transform: translateX(-1.5em);
+}
+.toggle:checked:before {
+	transform: translateX(1.5em);
+}
+.toggle:checked:after {
+	transform: translateX(3em);
+}
+.toggle:checked ~ .curtain {
+	transform: scaleX(1);
+}
+.toggle:focus {
+	outline: transparent;
+}
